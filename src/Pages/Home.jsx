@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Menu from '../Components/Menu';
 import { fetchAgents } from '../Utils/fetchAgents';
-import valorant from '../assets/valorant.jpg';
+
+import HeroSection from "../Components/heroSection.jsx";
 
 function Home() {
   const [agents, setAgents] = useState([]);
@@ -16,14 +16,8 @@ function Home() {
 
   return (
       <div className="w-full bg-red-700 mx-auto">
-
-        <div className='container bg-red-500'>
-        <Menu />
-        <img src={valorant} alt="Valorant" className="h-auto w-full" />
-        </div>
-
+          <HeroSection/>
         <div className="container max-w-screen-lg mx-auto px-5">
-
           <h2 className="text-white text-3xl font-bold mb-4">Valorant Agents</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-14">
             {agents.map(agent => (
