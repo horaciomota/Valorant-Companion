@@ -15,7 +15,7 @@ function Home() {
   }, []);
 
   return (
-      <div className="w-full bg-red-700 mx-auto">
+      <>
           <HeroSection/>
         <div className="container max-w-screen-lg mx-auto px-5">
           <h2 className="text-white text-3xl font-bold mb-4">Valorant Agents</h2>
@@ -28,7 +28,7 @@ function Home() {
             ))}
           </div>
         </div>
-      </div>
+      </>
   );
 }
 
