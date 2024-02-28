@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
-import Menu from './Components/Menu';
-import { fetchAgents } from './Utils/apiService';
+import Menu from '../Components/Menu';
+import { fetchAgents } from '../Utils/fetchAgents';
+import valorant from '../assets/valorant.jpg';
 
-function HeroSection() {
+function Home() {
   const [agents, setAgents] = useState([]);
 
   useEffect(() => {
@@ -15,9 +15,15 @@ function HeroSection() {
   }, []);
 
   return (
-      <div className="w-screen bg-red-100">
+      <div className="w-full bg-red-700 mx-auto">
+
+        <div className='container bg-red-500'>
         <Menu />
+        <img src={valorant} alt="Valorant" className="h-auto w-full" />
+        </div>
+
         <div className="container max-w-screen-lg mx-auto px-5">
+
           <h2 className="text-white text-3xl font-bold mb-4">Valorant Agents</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-14">
             {agents.map(agent => (
@@ -32,7 +38,7 @@ function HeroSection() {
   );
 }
 
-export default HeroSection;
+export default Home;
 
 
 
